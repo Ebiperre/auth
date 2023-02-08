@@ -1,0 +1,21 @@
+<div>
+  <div>
+    <div>
+      <h3 style="color: crimson; font-size: 30px;">Thank You for Registering</h3>
+      <div *ngIf="authService.userData as user">
+        <p>We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+        <p>Please check your email and click on the link to verfiy your email address.</p>
+      </div>
+      
+      <!-- Calling SendVerificationMail() method using authService Api -->
+      <div>
+        <button type="button" style="padding: 10px 50px; background-color: crimson; color: white; border: none; font-size: 20px;" (click)="authService.SendVerificationMail()">
+          Resend Verification Email
+        </button>
+      </div>
+    </div>
+    <div style="margin-top: 10px;">
+      <span style="cursor: pointer;" routerLink="/sign-in"> Sign in</span>
+    </div>
+  </div>
+</div>
